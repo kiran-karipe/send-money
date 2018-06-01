@@ -3,7 +3,6 @@
   <div class="padding-top-10"></div>
   <div>
     <select class="form-control" id="country" required>
-      <label for="country">send to</label>
       <option *ngFor="let country of countries" [value]="country" onselect="">{{country}}</option>
     </select>
   </div>
