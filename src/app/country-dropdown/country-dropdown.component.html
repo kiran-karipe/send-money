@@ -1,0 +1,10 @@
+<form class="no-margin ng-pristine ng-valid-min-send-amount ng-valid-max-send-amount ng-valid-payout-required ng-valid-payin-required ng-valid ng-valid-required">
+  <div class="dropdown-name-style">Select your receiver's country:</div>
+  <div class="padding-top-10"></div>
+  <div>
+    <select class="form-control" id="country" required>
+      <label for="country">send to</label>
+      <option *ngFor="let country of countries" [value]="country" onselect="">{{country}}</option>
+    </select>
+  </div>
+</form>
