@@ -7,11 +7,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CountryDropdownComponent implements OnInit {
   countries = ['United States', 'India', 'United Kingdom', 'China', 'Mexico'];
-  selectedCountry = this.countries[0];
+  selectedCountry = '';
+  selectedUS = true;
   constructor() {
-    console.log("It is working " + this.selectedCountry);
   }
 
   ngOnInit() {
+  }
+
+  onChange(event) {
+    this.selectedCountry = event.target.value;
+    if(this.selectedCountry === 'United States') {
+      this.selectedUS = true;
+    } else {
+      this.selectedUS = false;
+    }
+    console.log(this.selectedCountry);
   }
 }

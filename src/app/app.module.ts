@@ -11,6 +11,7 @@ import { CreditDebitPaymentCardComponent } from './credit-debit-payment-card/cre
 import { BankAccountPaymentCardComponent } from './bank-account-payment-card/bank-account-payment-card.component';
 import { PayInStoreCardComponent } from './pay-in-store-card/pay-in-store-card.component';
 import { SummaryFieldComponent } from './summary-field/summary-field.component';
+import { ConfirmStateDropdownComponent } from './confirm-state-dropdown/confirm-state-dropdown.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { SummaryFieldComponent } from './summary-field/summary-field.component';
     CreditDebitPaymentCardComponent,
     BankAccountPaymentCardComponent,
     PayInStoreCardComponent,
-    SummaryFieldComponent
+    SummaryFieldComponent,
+    ConfirmStateDropdownComponent
   ],
   imports: [
     BrowserModule

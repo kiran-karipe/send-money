@@ -1,0 +1,6 @@
+<p style="font-size: 18px; font: Arial;">Confirm the state where you are going to pay for transfer</p>
+<div class="select-wrapper">
+  <select class="form-control error-behavior select-group ng-pristine ng-untouched ng-valid ng-not-empty ng-valid-required fix-label" id="country" required>
+    <option *ngFor="let state of states" [value]="state" onselect="">{{state}}</option>
+  </select>
+</div>
