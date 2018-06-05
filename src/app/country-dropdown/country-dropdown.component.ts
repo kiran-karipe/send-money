@@ -10,11 +10,13 @@ import { Country } from '../models/country';
 export class CountryDropdownComponent implements OnInit {
   countries: Country[];
   selectedCountry: Country;
+  baseCountry: Country;
 
   constructor(private countryService: CountryService) { }
 
   ngOnInit() {
     this.getCountries();
+    this.baseCountry = this.countries.find(country => country.name == "United States");
   }
 
   getCountries(): void {
@@ -23,10 +25,5 @@ export class CountryDropdownComponent implements OnInit {
 
   onChange(countryId: Number) {
     this.selectedCountry = this.countries.find(country => country.id == countryId);
-    // if(this.selectedCountry === 'United States') {
-    //   this.selectedUS = true;
-    // } else {
-    //   this.selectedUS = false;
-    // }
   }
 }

@@ -12,6 +12,9 @@ import { BankAccountPaymentCardComponent } from './bank-account-payment-card/ban
 import { PayInStoreCardComponent } from './pay-in-store-card/pay-in-store-card.component';
 import { SummaryFieldComponent } from './summary-field/summary-field.component';
 import { ConfirmStateDropdownComponent } from './confirm-state-dropdown/confirm-state-dropdown.component';
+import { SendAndRecieveAmountFieldComponent } from './send-and-recieve-amount-field/send-and-recieve-amount-field.component';
+import { DataService } from './data.service';
+import { SendAndReceiveAmountComponent } from './send-and-receive-amount/send-and-receive-amount.component';
 
 @NgModule({
   declarations: [
@@ -24,12 +27,15 @@ import { ConfirmStateDropdownComponent } from './confirm-state-dropdown/confirm-
     BankAccountPaymentCardComponent,
     PayInStoreCardComponent,
     SummaryFieldComponent,
-    ConfirmStateDropdownComponent
+    ConfirmStateDropdownComponent,
+    SendAndRecieveAmountFieldComponent,
+    SendAndReceiveAmountComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

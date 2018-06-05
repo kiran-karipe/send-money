@@ -7,9 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PayInStoreCardComponent implements OnInit {
 
+  selectedPayInStore = false;
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  onPayInStoreSelect(event) {
+    this.selectedPayInStore = true;
+    console.log(this.selectedPayInStore);
   }
 
 }

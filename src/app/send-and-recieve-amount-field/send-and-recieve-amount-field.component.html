@@ -1,0 +1,15 @@
+<div class="row">
+  <div class="col-sm-5">
+    <input type="number" id="country" name="name" class="form-control"
+           required placeholder="Send amount" (change)="onSendAmountChange($event.target.value)">
+  </div>
+  <div>
+    <img src="../images/si-glyph-arrow-left-right.svg">
+  </div>
+  <div class="col-sm-5">
+    <input class="form-control" placeholder="Receive amount" value="{{receiveAmountValue}}">
+  </div>
+</div>
+
+<!-- type="number" id="amount" name="name"
+       required  -->

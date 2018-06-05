@@ -9,8 +9,5 @@
     </option>
   </select>
 </div>
-
-<app-send-and-receive-amount></app-send-and-receive-amount>
 <div class="padding-bottom-30"></div>
-<app-send-amount-field *ngIf="selectedUS"></app-send-amount-field>
-<app-send-and-recieve-amount-field *ngIf="!selectedUS"></app-send-and-recieve-amount-field>
+<app-send-and-receive-amount [from]="baseCountry" [to]="selectedCountry"></app-send-and-receive-amount>
