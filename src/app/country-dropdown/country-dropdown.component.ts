@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { CountryService } from '../country.service';
+import { Country } from '../models/country';
 
 @Component({
   selector: 'app-country-dropdown',
@@ -6,22 +8,25 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./country-dropdown.component.css']
 })
 export class CountryDropdownComponent implements OnInit {
-  countries = ['United States', 'India', 'United Kingdom', 'China', 'Mexico'];
-  selectedCountry = '';
-  selectedUS = true;
-  constructor() {
-  }
+  countries: Country[];
+  selectedCountry: Country;
+
+  constructor(private countryService: CountryService) { }
 
   ngOnInit() {
+    this.getCountries();
   }
 
-  onChange(event) {
-    this.selectedCountry = event.target.value;
-    if(this.selectedCountry === 'United States') {
-      this.selectedUS = true;
-    } else {
-      this.selectedUS = false;
-    }
-    console.log(this.selectedCountry);
+  getCountries(): void {
+    this.countries = this.countryService.getCountries();
+  }
+
+  onChange(countryId: Number) {
+    this.selectedCountry = this.countries.find(country => country.id == countryId);
+    // if(this.selectedCountry === 'United States') {
+    //   this.selectedUS = true;
+    // } else {
+    //   this.selectedUS = false;
+    // }
   }
 }

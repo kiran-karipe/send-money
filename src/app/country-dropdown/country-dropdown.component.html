@@ -3,13 +3,14 @@
 <div class="dropdown-name-style">Select your receiver's country:</div>
 <div class="padding-top-10"></div>
 <div>
-  <select class="form-control" id="country" required (change)="onChange($event)">
-    <option *ngFor="let country of countries" [value]="country">
-      {{country}}
+  <select class="form-control" id="country" required (change)="onChange($event.target.value)">
+    <option *ngFor="let country of countries" [value]="country.id">
+      {{country.name}}
     </option>
   </select>
 </div>
+
+<app-send-and-receive-amount></app-send-and-receive-amount>
 <div class="padding-bottom-30"></div>
-<div *ngIf="selectedUS">
-  <app-send-amount-field></app-send-amount-field>
-</div>
+<app-send-amount-field *ngIf="selectedUS"></app-send-amount-field>
+<app-send-and-recieve-amount-field *ngIf="!selectedUS"></app-send-and-recieve-amount-field>
