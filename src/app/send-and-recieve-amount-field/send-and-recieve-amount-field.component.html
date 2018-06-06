@@ -4,8 +4,8 @@
            required placeholder="1.00" (keyup)="onKey($event.target.value)">
     <label for="country" class="static-value">USD</label>
   </div>
-  <div>
-    <img src="../images/si-glyph-arrow-left-right.svg">
+  <div >
+    <img style="height: 50px;" src="http://chittagongit.com/images/two-way-arrow-icon/two-way-arrow-icon-7.jpg">
   </div>
   <div class="col-sm-5">
     <input class="form-control tall_height" placeholder="0.00" value="{{receiveAmountValue}}" id="country">
@@ -16,10 +16,6 @@
 <div class="padding-bottom-30"></div>
 <div style="text-align: center; font-size: 16px;">
   <strong>
-    <span>1.00 USD = {{receiveAmount.exchangeRate}} {{receiverCurrency}}</span>
+    <span>1.00 USD = {{receiveAmount.exchangeRate}} {{receiverCurrency}} ({{receiverCurrencyCode}})</span>
   </strong>
 </div>
-
-<!-- type="number" id="amount" name="name"
-       required  -->
-<!--  -->
