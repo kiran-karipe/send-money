@@ -3,7 +3,7 @@
 <div class="dropdown-name-style">Select your receiver's country:</div>
 <div class="padding-top-10"></div>
 <div>
-  <select class="form-control" id="country" required (change)="onChange($event.target.value)">
+  <select class="form-control" style="height: 50px;" id="country" required (change)="onChange($event.target.value)">
     <option *ngFor="let country of countries" [value]="country.id">
       {{country.name}}
     </option>

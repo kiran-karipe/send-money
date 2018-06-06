@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, OnChanges, SimpleChanges, SimpleChange } from '@angular/core';
 import { Country } from '../models/country';
 
 @Component({
@@ -9,15 +9,26 @@ import { Country } from '../models/country';
 export class SendAndRecieveAmountFieldComponent implements OnInit {
   @Input() sendAmount: Country;
   @Input() receiveAmount: Country;
+
+  receiverCurrency= '';
+  receiverCurrencyCode='';
   constructor() { }
 
   ngOnInit() {
-    this.onSendAmountChange();
   }
-  receiveAmountValue = 0;
+  receiveAmountValue = 0.00;
 
-  onSendAmountChange(event) {
-    this.receiveAmountValue = event * this.receiveAmount.exchangeRate;
+  ngOnChanges(changes: SimpleChanges) {
+    if(changes['receiveAmount']) {
+      this.receiveAmountValue = parseFloat((this.sendAmount.exchangeRate * this.receiveAmount.exchangeRate).toFixed(4));
+      this.receiverCurrency = this.receiveAmount.currency;
+      this.receiverCurrencyCode = this.receiveAmount.currencyCode;
+    }
+  }
+
+  onKey(event) {
+    this.sendAmount.exchangeRate = event;
+    this.receiveAmountValue = parseFloat((this.sendAmount.exchangeRate * this.receiveAmount.exchangeRate).toFixed(4));
   }
 
 }

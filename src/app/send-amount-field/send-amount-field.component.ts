@@ -9,7 +9,7 @@ import { Country } from '../models/country';
 })
 export class SendAmountFieldComponent implements OnInit {
   @Input() sendAmount: Country;
-s  amount = 0;
+  amount = 0;
   constructor(private dataService: DataService) {
     this.dataService.getAmount(this.amount);
   }
