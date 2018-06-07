@@ -19,6 +19,7 @@ import { DataService } from './data.service';
 import { CountryService } from './country.service';
 import { SendAndReceiveAmountComponent } from './send-and-receive-amount/send-and-receive-amount.component';
 import { SendMoneyComponent } from './components/send-money/send-money.component';
+import { AmountFieldComponent } from './components/amount-field/amount-field.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { SendMoneyComponent } from './components/send-money/send-money.component
     ConfirmStateDropdownComponent,
     SendAndRecieveAmountFieldComponent,
     SendAndReceiveAmountComponent,
-    SendMoneyComponent
+    SendMoneyComponent,
+    AmountFieldComponent
   ],
   imports: [
     BrowserModule,

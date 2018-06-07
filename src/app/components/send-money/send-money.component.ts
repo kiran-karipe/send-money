@@ -1,6 +1,5 @@
 import { Component, OnInit, Input, ViewChild, AfterViewInit } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { Observable } from 'rxjs/Observable';
 import { Subscription } from 'rxjs/Subscription';
 
 import { CountryService } from '../../country.service';
@@ -19,13 +18,9 @@ import {
 })
 export class SendMoneyComponent implements OnInit {
   private subscription: Subscription;
-  countries$: Observable<Country[]>;
-  // @Output() getCountriesEvent = new EventEmitter();
-
-
-  // sendAmount: Country;
-  selectedCountry: Country;
+  countries: Country[];
   baseCountry: Country;
+  selectedCountry: Country;
 
   constructor(private _store: Store<any>, private countryService: CountryService) {
     this.subscription = this._store
@@ -61,7 +56,7 @@ export class SendMoneyComponent implements OnInit {
     });
   }
 
-  setSelectedCountry(selectedCountry): void {
+  setSelectedCountry(selectedCountry: Country): void {
     this._store.dispatch({
       type: SET_SELECTED_COUNTRY,
       payload: selectedCountry

@@ -6,7 +6,7 @@
         <app-country-dropdown
           [countries]="countries"
           [selectedCountry]="selectedCountry"
-          (countryChangeEvent)="setSelectedCountry(country)">
+          (countryChangeEvent)="setSelectedCountry($event)">
         </app-country-dropdown>
         <div class="padding-bottom-30"></div>
         <app-send-and-receive-amount [from]="baseCountry" [to]="selectedCountry"></app-send-and-receive-amount>

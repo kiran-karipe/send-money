@@ -1,17 +1,25 @@
 import { ActionReducer, Action } from '@ngrx/store';
+import { round } from 'lodash';
+
 import { Country } from './models/country';
 export const GET_COUNTRIES = 'GET_COUNTRIES';
 export const SET_BASE_COUNTRY = 'SET_BASE_COUNTRY';
 export const SET_SELECTED_COUNTRY = 'SET_SELECTED_COUNTRY';
+export const CHANGE_TRANSFER_AMOUNT = 'CHANGE_TRANSFER_AMOUNT';
+export const CHANGE_RECEIVE_AMOUNT = 'CHANGE_RECEIVE_AMOUNT';
 
 interface AppAction extends Action {
   type: string;
   payload?: any;
 }
 
-const initialState = { countries: [] };
+const initialState = {
+  countries: [],
+  selectedCountry: null,
+  transferAmount: 0
+};
 
-export function appReducer(state: <any> = initialState, action: AppAction) {
+export function appReducer(state = initialState, action: AppAction) {
   switch (action.type) {
     case GET_COUNTRIES:
       return {
@@ -26,7 +34,20 @@ export function appReducer(state: <any> = initialState, action: AppAction) {
     case SET_SELECTED_COUNTRY:
       return {
         ...state,
-        selectedCountry: action.payload
+        selectedCountry: action.payload,
+        receiveAmount: round(state.transferAmount * action.payload.exchangeRate, 4);
+      };
+    case CHANGE_TRANSFER_AMOUNT:
+      return {
+        ...state,
+        transferAmount: action.payload,
+        receiveAmount: round(action.payload * state.selectedCountry.exchangeRate, 4)
+      };
+    case CHANGE_RECEIVE_AMOUNT:
+      return {
+        ...state,
+        transferAmount: round(action.payload / state.selectedCountry.exchangeRate, 4),
+        receiveAmount: action.payload
       };
     default:
       return state;
