@@ -9,44 +9,5 @@
 </header>
 
 <div class="absolute-center">
-  <div class="row">
-    <div class="column1">
-      <div class="left-container">
-        <div class="right-container-inner">
-          <h1 id="smotitletext">Send Money Online</h1>
-          <app-country-dropdown></app-country-dropdown>
-          <div class="padding-bottom-30"></div>
-          <hr />
-          <p style="font-size: 18px; font: Arial;">How does your receiver want the money?</p>
-          <div class="row">
-            <app-cash-pickup-card></app-cash-pickup-card>
-            <app-bank-account-card></app-bank-account-card>
-          </div>
-          <!-- <div class="padding-bottom-30"></div> -->
-          <hr />
-          <p style="font-size: 18px; font: Arial;">How would you like to pay?</p>
-          <div class="row">
-            <app-credit-debit-payment-card></app-credit-debit-payment-card>
-            <app-bank-account-payment-card></app-bank-account-payment-card>
-            <app-pay-in-store-card></app-pay-in-store-card>
-          </div>
-          <!-- <div class="padding-bottom-30"></div> -->
-          <hr />
-          <div class="padding-bottom-30"></div>
-          <span class="wu-optional-field">
-            <a href="" tabindex="10" aria-label="promo" class="no-padding">
-              <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>&nbsp;&nbsp;I have a promo code</a>
-          </span>
-          <hr />
-          <div class="padding-bottom-30"></div>
-          <div class="padding-bottom-30"></div>
-          <button class="btn btn-primary btn-lg btn-block no-margin">Continue</button>
-        </div>
-      </div>
-    </div>
-    <div class="padding-right-30"></div>
-    <div class="column2">
-      <app-summary-field></app-summary-field>
-    </div>
-  </div>
+  <app-send-money></app-send-money>
 </div>

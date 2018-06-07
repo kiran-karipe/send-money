@@ -1,15 +1,19 @@
 import { Injectable } from '@angular/core';
-import { SendAmountFieldComponent } from './send-amount-field/send-amount-field.component'
+import { BehaviorSubject } from 'rxjs';
+import { Country } from './models/country';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class DataService {
-  sendAmount = 0;
+
+  receiverCountry: Country;
+
+  private messageSource = new BehaviorSubject(this.receiverCountry);
+  currentMessage = this.messageSource.asObservable();
+
   constructor() { }
-  getAmount(data) {
-    return data;
-    // console.log(data)
+
+  changeMessage(message: Country) {
+    this.messageSource.next(message)
   }
 
 }

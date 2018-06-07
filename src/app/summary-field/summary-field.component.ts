@@ -1,21 +1,20 @@
-import { Component, OnInit } from '@angular/core';
-import { DataService } from '../data.service';
+import { Component, OnInit, Input } from '@angular/core';
+import { CountryService } from '../country.service';
+import { Country } from '../models/country';
 
 @Component({
   selector: 'app-summary-field',
   templateUrl: './summary-field.component.html',
   styleUrls: ['./summary-field.component.css'],
-  providers: [ DataService ]
 })
 export class SummaryFieldComponent implements OnInit {
 
-  constructor(private dataService: DataService) { }
-  data = 0;
+  constructor(private countryService: CountryService) { }
+  countries: Country[];
   ngOnInit() {
-    this.dataService.getAmount((data) => {
-      this.data = data;
-    });
-    console.log("Data is: " + this.data);
+    this.countries = this.countryService.getCountries();
   }
+
+
 
 }

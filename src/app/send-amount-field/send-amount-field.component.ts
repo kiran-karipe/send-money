@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { DataService } from '../data.service';
+// import { DataService } from '../data.service';
 import { Country } from '../models/country';
 
 @Component({
@@ -10,8 +10,8 @@ import { Country } from '../models/country';
 export class SendAmountFieldComponent implements OnInit {
   @Input() sendAmount: Country;
   amount = 0;
-  constructor(private dataService: DataService) {
-    this.dataService.getAmount(this.amount);
+  constructor() {
+    // this.dataService.getAmount(this.amount);
   }
 
   ngOnInit(): void {

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, OnChanges, SimpleChanges, SimpleChange } from '@angular/core';
+import { Component, OnInit, Input, OnChanges, SimpleChanges, SimpleChange, Output, EventEmitter } from '@angular/core';
 import { Country } from '../models/country';
 
 @Component({
@@ -12,6 +12,10 @@ export class SendAndRecieveAmountFieldComponent implements OnInit {
 
   receiverCurrency= '';
   receiverCurrencyCode='';
+
+  @Output() messageEvent = new EventEmitter<Country>();
+  @Output() messageEvent1 = new EventEmitter<number>();
+  @Output() messageEvent2 = new EventEmitter<number>();
   constructor() { }
 
   ngOnInit() {
@@ -29,6 +33,9 @@ export class SendAndRecieveAmountFieldComponent implements OnInit {
   onKey(event) {
     this.sendAmount.exchangeRate = event;
     this.receiveAmountValue = parseFloat((this.sendAmount.exchangeRate * this.receiveAmount.exchangeRate).toFixed(4));
+    this.messageEvent.emit(this.receiveAmount);
+    this.messageEvent1.emit(this.receiveAmountValue);
+    this.messageEvent2.emit(event);
   }
 
 }

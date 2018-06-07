@@ -1,7 +1,7 @@
-import { Component, OnInit, Input, OnChanges, SimpleChanges, SimpleChange } from '@angular/core';
+import { Component, OnInit, Input, OnChanges, SimpleChanges, SimpleChange, Output, EventEmitter } from '@angular/core';
 // import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 import { Country } from '../models/country';
-import * as _ from 'lodash';
+import { isEqual } from 'lodash';
 
 @Component({
   selector: 'app-send-and-receive-amount',
@@ -11,27 +11,49 @@ import * as _ from 'lodash';
 export class SendAndReceiveAmountComponent implements OnInit {
   @Input() from: Country;
   @Input() to: Country;
-
+  // noBank: boolean;
   constructor() { }
+
+  // receiverCountry: Country;
+  // toReceiver: number;
+  // transferAmount: number;
+
+  // @Output() changeEvent = new EventEmitter<Country>();
+  // @Output() changeEvent1 = new EventEmitter<number>();
+  // @Output() changeEvent2 = new EventEmitter<number>();
 
   ngOnInit() {
     // this.onChangeCountry();
   }
-  _to: Country;
-  isSameCountry = true;
-  ngOnChanges(changes: SimpleChanges) {
-    if(changes['to']) {
-      // const to: SimpleChange = changes.to
-      // this._to = to.currentValue;
-      if(typeof this.to !== "undefined") {
-        if(!_.isEqual(this.from, this.to)) {
-          this.isSameCountry = false;
-        } else {
-          this.isSameCountry = true;
-        }
-      }
-    }
+  // _to: Country;
+  // ngOnChanges(changes: SimpleChanges) {
+  //   if(changes['to']) {
+  //     // const to: SimpleChange = changes.to
+  //     // this._to = to.currentValue;
+  //
+  //   }
+  // }
+
+  receiverAmountCountry($event) {
+    this.receiverCountry = $event;
   }
+
+  receiverAmount($event) {
+    this.toReceiver = $event;
+  }
+
+  sendAmount($event) {
+    this.transferAmount = $event;
+  }
+
+  onChange(event) {
+    this.changeEvent.emit(this.receiverCountry);
+    this.changeEvent1.emit(this.toReceiver);
+    this.changeEvent2.emit(this.transferAmount);
+  }
+  // if(this.selectedCountry.name === "Jamaica" || this.selectedCountry.name === "Colombia") {
+  //   noBankAccount = false;
+  // }
 
   // onChangeCountry(): boolean {
   //   return this.isSameCountry;

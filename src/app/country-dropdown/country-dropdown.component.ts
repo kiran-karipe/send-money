@@ -1,29 +1,35 @@
-import { Component, OnInit, OnChanges, SimpleChanges, SimpleChange } from '@angular/core';
+import { Component, Input, Output } from '@angular/core';
+import { ViewChild, AfterViewInit, EventEmitter } from '@angular/core';
 import { CountryService } from '../country.service';
 import { Country } from '../models/country';
+import { SendAndReceiveAmountComponent } from '../send-and-receive-amount/send-and-receive-amount.component';
 
 @Component({
   selector: 'app-country-dropdown',
   templateUrl: './country-dropdown.component.html',
   styleUrls: ['./country-dropdown.component.css']
 })
-export class CountryDropdownComponent implements OnInit {
-  countries: Country[];
-  selectedCountry: Country;
-  baseCountry: Country;
+export class CountryDropdownComponent {
+  @Input() countries: Country[];
+  @Input() selectedCountry: Country;
+  @Output() countryChangeEvent = new EventEmitter<Country>();
+  // countries: Country[];
 
-  constructor(private countryService: CountryService) { }
+  // receiverCountry: Country;
+  // toReceiver: number;
+  // transferAmount: number;
+  //@Input() sendAmount: Country;
+  // noBankAccountCountry = true;
+  // @ViewChild(SendAndReceiveAmountComponent) child;
+  // constructor(private countryService: CountryService) { }
 
-  ngOnInit() {
-    this.getCountries();
-    this.baseCountry = this.countries.find(country => country.name == "United States");
-  }
+  // ngAfterViewInit() {
+  //  this.receiverCountry = this.child.receiverCountry;
+  //  this.toReceiver = this.child.toReceiver;
+  //  this.transferAmount = this.child.transferAmount;
+  // }
 
-  getCountries(): void {
-    this.countries = this.countryService.getCountries();
-  }
-
-  onChange(countryId: Number) {
-    this.selectedCountry = this.countries.find(country => country.id == countryId);
+  handleChange(countryId: Number) {
+    this.countryChangeEvent.emit(this.countries.find(country => country.id == countryId));
   }
 }

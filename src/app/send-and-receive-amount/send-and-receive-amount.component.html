@@ -1,8 +1,11 @@
 <!-- <div *ngIf="isSameCountry; then app-send-amount-field else app-send-and-recieve-amount-field">
 </div> -->
-<div *ngIf="!isSameCountry">
-  <app-send-and-recieve-amount-field [sendAmount]="from" [receiveAmount]="to"></app-send-and-recieve-amount-field>
+<div *ngIf="from !== to" (change)="onChange($event)">
+  <app-send-and-recieve-amount-field [sendAmount]="from" [receiveAmount]="to"
+    (messageEvent)="receiverAmountCountry($event)" (messageEvent1)="receiverAmount($event)"
+    (messageEvent2)="sendAmount($event)">
+  </app-send-and-recieve-amount-field>
 </div>
-<div *ngIf="isSameCountry">
+<div *ngIf="from === to">
   <app-send-amount-field [sendAmount]="from"></app-send-amount-field>
 </div>
