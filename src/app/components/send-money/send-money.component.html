@@ -14,18 +14,36 @@
         <hr />
         <p style="font-size: 18px; font: Arial;">How does your receiver want the money?</p>
         <div class="row">
-          <app-cash-pickup-card></app-cash-pickup-card>
-          <div>
-            <app-bank-account-card></app-bank-account-card>
+          <app-receive-type-card
+            [countries]="countries"
+            [selectedCountry]="selectedCountry"
+            [baseCountry]="baseCountry"
+            [receiveTypeCardName]="'Cash pickup'"
+            >
+          </app-receive-type-card>
+          <div *ngIf="selectedCountry.bankAccount">
+            <app-receive-type-card
+              [countries]="countries"
+              [selectedCountry]="selectedCountry"
+              [baseCountry]="baseCountry"
+              [receiveTypeCardName]="'Bank account'"
+              >
+            </app-receive-type-card>
           </div>
         </div>
         <!-- <div class="padding-bottom-30"></div> -->
         <hr />
         <p style="font-size: 18px; font: Arial;">How would you like to pay?</p>
         <div class="row">
-          <app-credit-debit-payment-card></app-credit-debit-payment-card>
-          <app-bank-account-payment-card></app-bank-account-payment-card>
-          <app-pay-in-store-card></app-pay-in-store-card>
+          <app-like-to-pay-card
+            [cardName]="'Credit/debit card'">
+          </app-like-to-pay-card>
+          <app-like-to-pay-card
+            [cardName]="'Bank account'">
+          </app-like-to-pay-card>
+          <app-like-to-pay-card
+            [cardName]="'Pay in-store'">
+          </app-like-to-pay-card>
         </div>
         <!-- <div class="padding-bottom-30"></div> -->
         <hr />
@@ -43,6 +61,10 @@
   </div>
   <div class="padding-right-30"></div>
   <div class="column2">
-    <app-summary-field></app-summary-field>
+    <app-summary-field
+      [countries]="countries"
+      [selectedCountry]="selectedCountry"
+      [baseCountry]="baseCountry">
+    </app-summary-field>
   </div>
 </div>

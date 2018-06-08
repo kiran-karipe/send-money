@@ -1,6 +1,6 @@
-<div>
-  <div *ngIf="from !== to" (change)="onChange($event)">
-    <div class='column1'>
+<div *ngIf="from !== to">
+  <div class="row">
+    <div class='col-sm-5'>
       <app-amount-field
         [placeholder]="'Send Amount'"
         [amount]="transferAmount"
@@ -9,7 +9,10 @@
         >
       </app-amount-field>
     </div>
-    <div class='column2'>
+    <div >
+      <img style="height: 50px;" src="http://chittagongit.com/images/two-way-arrow-icon/two-way-arrow-icon-7.jpg">
+    </div>
+    <div class='col-sm-5'>
       <app-amount-field
         [placeholder]="'Receive Amount'"
         [amount]="receiveAmount"
@@ -19,13 +22,20 @@
       </app-amount-field>
     </div>
   </div>
-  <div *ngIf="from === to">
-    <app-amount-field
-      [placeholder]="'Send Amount'"
-      [amount]="transferAmount"
-      [country]="from"
-      (amountChange)="onTransferAmountChange($event)"
-      >
-    </app-amount-field>
+  <div class="padding-bottom-30"></div>
+  <div style="text-align: center; font-size: 16px;">
+    <strong>
+      <span>1.00 USD = {{to.exchangeRate}} {{to.currency}} ({{to.currencyCode}})</span>
+    </strong>
   </div>
+</div>
+
+<div *ngIf="from === to">
+  <app-amount-field
+    [placeholder]="'Send Amount'"
+    [amount]="transferAmount"
+    [country]="from"
+    (amountChange)="onTransferAmountChange($event)"
+    >
+  </app-amount-field>
 </div>

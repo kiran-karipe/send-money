@@ -1,13 +1,5 @@
-<!-- <div>
-  <input type="number" style="height: 50px;" id="amount" name="name" class="form-control"
-         required placeholder="placeholder" (change)="onAmountChange($event.target.value)">
- </input>
- <label for="country" class="static-value">{{receiverCurrencyCode}}</label>
-</div> -->
-<div class="col-sm-5">
-  <input class="form-control tall_height" id="country"
-    [placeholder]="placeholder"
-    [value]="amount || 0.0"
-    (keyup)="handleAmountChange($event.target.value)">
-  <label for="country" class="static-value">{{ country.currencyCode }}</label>
-</div>
+<input type="number" class="form-control tall_height" id="country" required
+  [placeholder]="placeholder"
+  [value]="amount || 0.0"
+  (keyup)="handleAmountChange($event.target.value)">
+<!-- <label for="country">{{ country.currencyCode }}</label> -->

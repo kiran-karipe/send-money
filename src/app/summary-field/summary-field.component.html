@@ -1,6 +1,24 @@
 <div class="card">
   <div class="card-body">
-    <h5 class="card-title">Summary</h5>
-    <p>{{receiverCountry}}</p>
+    <h5 style="line-height: 12px;" class="card-title">Summary</h5>
+    <div *ngIf="baseCountry !== selectedCountry">
+      <p class="exchangeRate ng-scope">Exchange Rate</p>
+      <hr >
+      <span class="exchangeRate">1.00 USD = {{selectedCountry.exchangeRate}} {{selectedCountry.currency}} ({{selectedCountry.currencyCode}})</span>
+      <hr >
+    </div>
+    <span class="exchangeRate">Transfer Amount {{transferAmount}} {{baseCountry.currencyCode}}</span>
+    <br>
+    <span class="exchangeRate">Transfer Fee {{transferFee}} {{baseCountry.currencyCode}}</span>
+    <br>
+    <div class="padding-bottom-30">
+    <span class="exchangeRate">Transfer Total {{transferAmount}} {{baseCountry.currencyCode}}</span>
+    <p class="exchangeRate">Total to receiver</p>
+    <hr >
+    <span>{{receiveAmount}}</span>
+    <div class="padding-bottom-30">
+    <div class="padding-bottom-30">
+    <p class="exchangeRate">Service Time:</p>
+    </div>
   </div>
 </div>

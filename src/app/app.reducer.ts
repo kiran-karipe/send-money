@@ -35,13 +35,13 @@ export function appReducer(state = initialState, action: AppAction) {
       return {
         ...state,
         selectedCountry: action.payload,
-        receiveAmount: round(state.transferAmount * action.payload.exchangeRate, 4);
+        receiveAmount: round(state.transferAmount * action.payload.exchangeRate, 4),
       };
     case CHANGE_TRANSFER_AMOUNT:
       return {
         ...state,
         transferAmount: action.payload,
-        receiveAmount: round(action.payload * state.selectedCountry.exchangeRate, 4)
+        receiveAmount: round(action.payload * state.selectedCountry.exchangeRate, 4),
       };
     case CHANGE_RECEIVE_AMOUNT:
       return {

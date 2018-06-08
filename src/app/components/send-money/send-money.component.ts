@@ -21,7 +21,6 @@ export class SendMoneyComponent implements OnInit {
   countries: Country[];
   baseCountry: Country;
   selectedCountry: Country;
-
   constructor(private _store: Store<any>, private countryService: CountryService) {
     this.subscription = this._store
       .select('app')
