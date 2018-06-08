@@ -14,7 +14,8 @@ export class AmountFieldComponent implements OnInit{
 
   constructor() {}
 
-  ngOnInit() {}
+  ngOnInit() {
+  }
 
   handleAmountChange(amount) {
     this.amountChange.emit(amount);

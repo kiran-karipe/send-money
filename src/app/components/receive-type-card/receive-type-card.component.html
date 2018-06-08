@@ -1,7 +1,11 @@
 <div class="col-sm-4">
-  <div class="card mb-3 border-dark" style="width: 10rem; height: 8rem;">
+  <div class="card mb-3 border-dark"
+      style="width: 10rem; height: 8rem;"
+      (click)="handleClick()">
     <div class="card-body">
       <p style="font-family: 'Arial Narrow';">{{receiveTypeCardName}}</p>
     </div>
   </div>
 </div>
+
+<!-- [ngStyle]="{'background-color': cardColor}" -->

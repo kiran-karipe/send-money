@@ -9,7 +9,52 @@
     </div>
     <span class="exchangeRate">Transfer Amount {{transferAmount}} {{baseCountry.currencyCode}}</span>
     <br>
-    <span class="exchangeRate">Transfer Fee {{transferFee}} {{baseCountry.currencyCode}}</span>
+    <div *ngIf="receiveType === 'Bank account' || receiveType === 'undefined'">
+      <div *ngIf="likeToPayType === 'Credit/debit card'">
+        <span class="exchangeRate">
+          Transfer Fee {{selectedCountry.creditCardTransferFeeBankAccount}}
+          {{receiveTypeCardName}}
+          {{baseCountry.currencyCode}}
+        </span>
+      </div>
+      <div *ngIf="likeToPayType === 'Bank account' || likeToPayType === 'undefined'">
+        <span class="exchangeRate">
+          Transfer Fee {{selectedCountry.bankAccountTransferFeeBankAccount}}
+          {{receiveTypeCardName}}
+          {{baseCountry.currencyCode}}
+        </span>
+      </div>
+      <div *ngIf="likeToPayType === 'Pay in-store'">
+        <span class="exchangeRate">
+          Transfer Fee {{selectedCountry.payInStoreTransferFeeBankAccount}}
+          {{receiveTypeCardName}}
+          {{baseCountry.currencyCode}}
+        </span>
+      </div>
+    </div>
+    <div *ngIf="receiveType === 'Cash pickup'">
+      <div *ngIf="likeToPayType === 'Credit/debit card'">
+        <span class="exchangeRate">
+          Transfer Fee {{selectedCountry.creditCardTransferFeeCashPickup}}
+          {{receiveTypeCardName}}
+          {{baseCountry.currencyCode}}
+        </span>
+      </div>
+      <div *ngIf="likeToPayType === 'Bank account' || likeToPayType === 'undefined'">
+        <span class="exchangeRate">
+          Transfer Fee {{selectedCountry.bankAccountTransferFeeCashPickup}}
+          {{receiveTypeCardName}}
+          {{baseCountry.currencyCode}}
+        </span>
+      </div>
+      <div *ngIf="likeToPayType === 'Pay in-store'">
+        <span class="exchangeRate">
+          Transfer Fee {{selectedCountry.payInStoreTransferFeeCashPickup}}
+          {{receiveTypeCardName}}
+          {{baseCountry.currencyCode}}
+        </span>
+      </div>
+    </div>
     <br>
     <div class="padding-bottom-30">
     <span class="exchangeRate">Transfer Total {{transferAmount}} {{baseCountry.currencyCode}}</span>

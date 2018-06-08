@@ -36,13 +36,16 @@
         <p style="font-size: 18px; font: Arial;">How would you like to pay?</p>
         <div class="row">
           <app-like-to-pay-card
-            [cardName]="'Credit/debit card'">
+            [selectedCountry]="selectedCountry"
+            [likeToPayCardName]="'Credit/debit card'">
           </app-like-to-pay-card>
           <app-like-to-pay-card
-            [cardName]="'Bank account'">
+            [selectedCountry]="selectedCountry"
+            [likeToPayCardName]="'Bank account'">
           </app-like-to-pay-card>
           <app-like-to-pay-card
-            [cardName]="'Pay in-store'">
+            [selectedCountry]="selectedCountry"
+            [likeToPayCardName]="'Pay in-store'">
           </app-like-to-pay-card>
         </div>
         <!-- <div class="padding-bottom-30"></div> -->
@@ -64,7 +67,8 @@
     <app-summary-field
       [countries]="countries"
       [selectedCountry]="selectedCountry"
-      [baseCountry]="baseCountry">
+      [baseCountry]="baseCountry"
+      [receiveTypeCardName]="receiveTypeCardName">
     </app-summary-field>
   </div>
 </div>

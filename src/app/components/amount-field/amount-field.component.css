@@ -2,7 +2,16 @@
   padding-bottom: 30px;
 }
 
-.static-value {
+.unitedStatesField {
+  position:absolute;
+	left:830px;
+	font-weight:bold;
+	font-size:0.8em;
+	color:#444;
+  top: 305px;
+}
+
+.otherfields {
   position:absolute;
 	left:250px;
 	font-weight:bold;

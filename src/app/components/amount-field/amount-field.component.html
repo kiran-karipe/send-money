@@ -1,5 +1,11 @@
 <input type="number" class="form-control tall_height" id="country" required
   [placeholder]="placeholder"
-  [value]="amount || 0.0"
+  [value]="amount || placeholder"
   (keyup)="handleAmountChange($event.target.value)">
+  <div *ngIf="country.name === 'United States'" class="unitedStatesField">
+    <label for="country">{{ country.currencyCode }}</label>
+  </div>
+  <div *ngIf="country.name !== 'United States'" class="otherfields">
+    <label for="country">{{ country.currencyCode }}</label>
+  </div>
 <!-- <label for="country">{{ country.currencyCode }}</label> -->
