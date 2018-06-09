@@ -8,6 +8,8 @@
 
 .positive {
     background-color: #1599BB;
+    border-color: #1599BB;
+    border: 0;
 }
 
 .negative {

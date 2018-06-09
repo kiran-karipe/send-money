@@ -10,26 +10,18 @@ import { Subscription } from 'rxjs/Subscription';
   styleUrls: ['./summary-field.component.css'],
 })
 export class SummaryFieldComponent implements OnInit {
-
-  @Input() countries: Country[];
-  @Input() baseCountry: Country;
-  @Input() selectedCountry: Country;
-  @Input() receiveTypeCardName: string;
-  transferAmount: number;
-  receiveAmount: number;
-  transferFee: number;
-  receiveType: string;
-  likeToPayType: string;
   private subscription: Subscription;
+  countries: Country[];
+  baseCountry: Country;
+  selectedCountry: Country;
 
-  constructor(private _store: Store<any>) {
+  constructor(private _store: Store<any>, private countryService: CountryService) {
     this.subscription = this._store
       .select('app')
       .subscribe(app => {
-        this.transferAmount = app.transferAmount;
-        this.receiveAmount = app.receiveAmount;
-        this.receiveType = app.setReceiveType;
-        this.likeToPayType = app.setLikeToPay;
+        this.countries = app.countries;
+        this.baseCountry = app.baseCountry;
+        this.selectedCountry = app.selectedCountry;
       });
   }
 

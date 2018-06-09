@@ -6,3 +6,7 @@ html {
 .tall_height {
   height: 50px;
 }
+
+.card {
+  font-weight:bold;
+}

@@ -6,10 +6,10 @@ export class Country {
   exchangeRate: number;
   cashPickup: boolean;
   bankAccount: boolean;
-  creditCardTransferFeeCashPickup: number;
-  bankAccountTransferFeeCashPickup: number;
-  payInStoreTransferFeeCashPickup: number;
-  creditCardTransferFeeBankAccount: number;
-  bankAccountTransferFeeBankAccount: number;
-  payInStoreTransferFeeBankAccount: number;
+  cashPickupCreditCardTransferFee: number;
+  cashPickupBankAccountTransferFee: number;
+  cashPickupPayInStoreTransferFee: number;
+  bankAccountCreditCardTransferFee: number;
+  bankAccountBankAccountTransferFee: number;
+  bankAccountPayInStoreTransferFee: number;
 }

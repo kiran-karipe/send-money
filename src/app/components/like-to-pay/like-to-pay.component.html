@@ -1,24 +1,33 @@
 <p style="font-size: 18px; font: Arial;">How would you like to pay?</p>
 <div class="row">
-  <div class="col-sm-3">
-    <app-like-to-pay-card>
+  <div class="col-sm-4">
+    <app-like-to-pay-card
+      [cardName]="'Credit/debit card'"
+      [country]="selectedCountry"
+      [selected]="payType==='Credit/debit card'"
+      [price]="getPrice('Credit/debit card')"
+      (isSelectedEvent)="cardIsSelected($event)">
     </app-like-to-pay-card>
   </div>
-  <div class="col-sm-3">
-    <app-like-to-pay-card>
+  <div class="col-sm-4">
+    <app-like-to-pay-card
+      [cardName]="'Bank account'"
+      [country]="selectedCountry"
+      [selected]="payType==='Bank account'"
+      [price]="getPrice('Bank account')"
+      (isSelectedEvent)="cardIsSelected($event)">
     </app-like-to-pay-card>
   </div>
-  <div class="col-sm-3">
-    <app-like-to-pay-card>
+  <div class="col-sm-4">
+    <app-like-to-pay-card
+      [cardName]="'Pay in-store'"
+      [country]="selectedCountry"
+      [selected]="payType==='Pay in-store'"
+      [price]="getPrice('Pay in-store')"
+      (isSelectedEvent)="cardIsSelected($event)">
     </app-like-to-pay-card>
   </div>
 </div>
 
 <hr />
 <div class="padding-bottom-30"></div>
-<!-- [selectedCountry]="selectedCountry"
-[likeToPayCardName]="'Credit/debit card'"
-[selectedCountry]="selectedCountry"
-[likeToPayCardName]="'Bank account'"
-[selectedCountry]="selectedCountry"
-[likeToPayCardName]="'Pay in-store'" -->

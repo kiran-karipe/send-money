@@ -3,7 +3,7 @@ import { Country } from '../../models/country';
 import { Store } from '@ngrx/store';
 import { Subscription } from 'rxjs/Subscription';
 import {
-  SET_RECEIVE_TYPE,
+  RECEIVE_CARD_IS_SELECTED,
 } from '../../app.reducer';
 
 
@@ -14,25 +14,23 @@ import {
 })
 export class ReceiveTypeComponent implements OnInit {
   @Input() selectedCountry: Country;
-  receiveTypeCardName: string;
+  receiveType: string;
 
   private subscription: Subscription;
   constructor(private _store: Store<any>) {
-    // this.subscription = this._store
-    //   .select('app')
-    //   .subscribe(app => {
-    //     this.setReceiveType = app.setReceiveType;
-    //   });
+    this.subscription = this._store
+      .select('app')
+      .subscribe(app => {
+        this.receiveType = app.receiveType;
+      });
   }
 
-  ngOnInit() {
-  }
-
-  handleClick() {
+  cardIsSelected($event) {
     this._store.dispatch({
-      type: SET_RECEIVE_TYPE,
-      payload: this.receiveTypeCardName
+      type: RECEIVE_CARD_IS_SELECTED,
+      payload: $event
     });
   }
-
+  ngOnInit() {
+  }
 }

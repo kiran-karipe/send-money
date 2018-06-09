@@ -1,4 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Country } from '../../models/country';
 
 @Component({
   selector: 'app-like-to-pay-card',
@@ -6,15 +7,19 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./like-to-pay-card.component.css']
 })
 export class LikeToPayCardComponent implements OnInit {
-
-  // setLikeToPay: string;
-  // receiveType: string;
-  // creditDebitFooter: number;
-  // bankAccountFooter: number;
-  // payInStoreFooter: number;
+  @Input() cardName: string;
+  @Input() country: Country;
+  @Input() selected: boolean;
+  @Input() price: number;
+  @Output() isSelectedEvent = new EventEmitter<string>();
 
   constructor() { }
 
   ngOnInit() {
   }
+
+  handleClick() {
+    this.isSelectedEvent.emit(this.cardName);
+  }
+
 }

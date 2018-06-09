@@ -3,7 +3,7 @@ import { Country } from '../../models/country';
 import { Store } from '@ngrx/store';
 import { Subscription } from 'rxjs/Subscription';
 import {
-  SET_LIKE_TO_PAY,
+  PAY_CARD_IS_SELECTED,
 } from '../../app.reducer';
 
 @Component({
@@ -13,24 +13,46 @@ import {
 })
 export class LikeToPayComponent implements OnInit {
   @Input() selectedCountry: Country;
-  likeToPayCardName: string;
-  setLikeToPay: string;
-  
+  payType: string;
+  receiveType: string;
+
   private subscription: Subscription;
   constructor(private _store: Store<any>) {
-    // this.subscription = this._store
-    //   .select('app')
-    //   .subscribe(app => {
-    //     this.setLikeToPay = app.setLikeToPay;
-    //   });
+    this.subscription = this._store
+      .select('app')
+      .subscribe(app => {
+        this.payType = app.payType;
+        this.receiveType = app.receiveType;
+      });
   }
   ngOnInit() {
   }
 
-  handleClick() {
+  getPrice(payType) {
+    if(payType === 'Credit/debit card') {
+      if(this.receiveType === 'Cash pickup') {
+        return this.selectedCountry.cashPickupCreditCardTransferFee;
+      } else {
+        return this.selectedCountry.bankAccountCreditCardTransferFee;
+      }
+    } else if(payType ==='Bank account') {
+      if(this.receiveType === 'Cash pickup') {
+        return this.selectedCountry.cashPickupBankAccountTransferFee;
+      } else {
+        return this.selectedCountry.bankAccountBankAccountTransferFee;
+      }
+    } else {
+      if(this.receiveType === 'Cash pickup') {
+        return this.selectedCountry.cashPickupPayInStoreTransferFee;
+      } else {
+        return this.selectedCountry.bankAccountPayInStoreTransferFee;
+      }
+    }
+  }
+  cardIsSelected($event) {
     this._store.dispatch({
-      type: SET_LIKE_TO_PAY,
-      payload: this.likeToPayCardName
+      type: PAY_CARD_IS_SELECTED,
+      payload: $event
     });
   }
 }

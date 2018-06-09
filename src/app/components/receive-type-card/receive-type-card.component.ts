@@ -1,4 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
+import { Country } from '../../models/country';
 
 @Component({
   selector: 'app-receive-type-card',
@@ -7,12 +8,17 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class ReceiveTypeCardComponent implements OnInit {
 
-  @Input() isSelected: boolean;
-  setReceiveType: string;
-  selectedReceiveType = false;
+  @Input() cardName: string;
+  @Input() country: Country;
+  @Input() selected: boolean;
+  @Output() isSelectedEvent = new EventEmitter<string>();
 
   constructor() { }
 
   ngOnInit() {
+  }
+
+  handleClick() {
+    this.isSelectedEvent.emit(this.cardName);
   }
 }

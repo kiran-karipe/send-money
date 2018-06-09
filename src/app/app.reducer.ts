@@ -7,8 +7,8 @@ export const SET_BASE_COUNTRY = 'SET_BASE_COUNTRY';
 export const SET_SELECTED_COUNTRY = 'SET_SELECTED_COUNTRY';
 export const CHANGE_TRANSFER_AMOUNT = 'CHANGE_TRANSFER_AMOUNT';
 export const CHANGE_RECEIVE_AMOUNT = 'CHANGE_RECEIVE_AMOUNT';
-export const SET_RECEIVE_TYPE = 'SET_RECEIVE_TYPE';
-export const SET_LIKE_TO_PAY = 'SET_LIKE_TO_PAY';
+export const RECEIVE_CARD_IS_SELECTED = 'RECEIVE_CARD_IS_SELECTED';
+export const PAY_CARD_IS_SELECTED = 'PAY_CARD_IS_SELECTED';
 
 interface AppAction extends Action {
   type: string;
@@ -18,7 +18,9 @@ interface AppAction extends Action {
 const initialState = {
   countries: [],
   selectedCountry: null,
-  transferAmount: 0
+  transferAmount: 0,
+  receiveType: 'Cash pickup',
+  payType: 'Bank account'
 };
 
 export function appReducer(state = initialState, action: AppAction) {
@@ -51,16 +53,16 @@ export function appReducer(state = initialState, action: AppAction) {
         transferAmount: round(action.payload / state.selectedCountry.exchangeRate, 4),
         receiveAmount: action.payload
       };
-    case SET_RECEIVE_TYPE:
+    case RECEIVE_CARD_IS_SELECTED:
       return {
         ...state,
-        setReceiveType: action.payload
-      }
-    case SET_LIKE_TO_PAY:
+        receiveType: action.payload
+      };
+    case PAY_CARD_IS_SELECTED:
       return {
         ...state,
-        setLikeToPay: action.payload
-      }
+        payType: action.payload
+      };
     default:
       return state;
   }
