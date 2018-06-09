@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { CountryService } from '../country.service';
 import { Country } from '../models/country';
 import { Store } from '@ngrx/store';
@@ -9,7 +9,7 @@ import { Subscription } from 'rxjs/Subscription';
   templateUrl: './summary-field.component.html',
   styleUrls: ['./summary-field.component.css'],
 })
-export class SummaryFieldComponent {
+export class SummaryFieldComponent implements OnInit {
 
   @Input() countries: Country[];
   @Input() baseCountry: Country;
@@ -17,6 +17,7 @@ export class SummaryFieldComponent {
   @Input() receiveTypeCardName: string;
   transferAmount: number;
   receiveAmount: number;
+  transferFee: number;
   receiveType: string;
   likeToPayType: string;
   private subscription: Subscription;
@@ -31,4 +32,8 @@ export class SummaryFieldComponent {
         this.likeToPayType = app.setLikeToPay;
       });
   }
+
+  ngOnInit() {
+  }
+
 }

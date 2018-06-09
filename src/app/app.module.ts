@@ -15,6 +15,9 @@ import { SendMoneyComponent } from './components/send-money/send-money.component
 import { AmountFieldComponent } from './components/amount-field/amount-field.component';
 import { ReceiveTypeCardComponent } from './components/receive-type-card/receive-type-card.component';
 import { LikeToPayCardComponent } from './components/like-to-pay-card/like-to-pay-card.component';
+import { ReceiveTypeComponent } from './components/receive-type/receive-type.component';
+import { LikeToPayComponent } from './components/like-to-pay/like-to-pay.component';
+import { PromoCodeComponent } from './components/promo-code/promo-code.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +29,10 @@ import { LikeToPayCardComponent } from './components/like-to-pay-card/like-to-pa
     SendMoneyComponent,
     AmountFieldComponent,
     ReceiveTypeCardComponent,
-    LikeToPayCardComponent
+    LikeToPayCardComponent,
+    ReceiveTypeComponent,
+    LikeToPayComponent,
+    PromoCodeComponent
   ],
   imports: [
     BrowserModule,

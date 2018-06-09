@@ -1,15 +1,7 @@
 header {
     background: #212A33;
-    background-image: initial;
-    background-position-x: initial;
-    background-position-y: initial;
-    background-size: initial;
-    background-repeat-x: initial;
-    background-repeat-y: initial;
-    background-attachment: initial;
-    background-origin: initial;
-    background-clip: initial;
     background-color: rgb(33, 42, 51);
+    height: 70px;
 }
 
 .absolute-center {
@@ -18,29 +10,3 @@ header {
     margin-right: auto;
     margin-left: auto;
 }
-/* .absolute-center, .absolute-right {
-    position: relative;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-} */
-
-/* .left-container {
-  border: 1px solid #D3D3D3;
-  padding-left: 0px;
-}*/
-
-/* .column1 {
-  float: left;
-  width: 70%;
-}
-
-.column2 {
-  float: right;
-  width: 30%;
-}
-
-.card {
-  height: 100px;
-} */

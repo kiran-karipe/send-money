@@ -1,0 +1,12 @@
+.padding-right-30 {
+    padding-right: 30px;
+}
+
+.wu-optional-field>a, .wu-optional-field>a:link, .wu-optional-field>a:visited {
+    color: grey;
+    cursor: pointer;
+    text-decoration: none;
+    outline: 0;
+    display: block;
+    transition: color .3s;
+}

@@ -5,3 +5,11 @@
   border-color: #1599BB;
   border: 0;
 }
+
+.positive {
+    background-color: #1599BB;
+}
+
+.negative {
+    background-color: #fff;
+}

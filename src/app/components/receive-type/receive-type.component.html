@@ -1,0 +1,14 @@
+<p style="font-size: 18px; font: Arial;">How does your receiver want the money?</p>
+<div class="row">
+  <div class="col-sm-3">
+    <app-receive-type-card>
+    </app-receive-type-card>
+  </div>
+  <div class="col-sm-3">
+    <div *ngIf="selectedCountry.bankAccount">
+      <app-receive-type-card>
+      </app-receive-type-card>
+    </div>
+  </div>
+</div>
+<hr />
