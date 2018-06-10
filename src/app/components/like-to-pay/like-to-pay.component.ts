@@ -5,7 +5,7 @@ import { Subscription } from 'rxjs/Subscription';
 import {
   PAY_CARD_IS_SELECTED,
 } from '../../app.reducer';
-
+import { calculateTransferFee } from '../../helpers/calculateTransferFee';
 @Component({
   selector: 'app-like-to-pay',
   templateUrl: './like-to-pay.component.html',
@@ -29,26 +29,13 @@ export class LikeToPayComponent implements OnInit {
   }
 
   getPrice(payType) {
-    if(payType === 'Credit/debit card') {
-      if(this.receiveType === 'Cash pickup') {
-        return this.selectedCountry.cashPickupCreditCardTransferFee;
-      } else {
-        return this.selectedCountry.bankAccountCreditCardTransferFee;
-      }
-    } else if(payType ==='Bank account') {
-      if(this.receiveType === 'Cash pickup') {
-        return this.selectedCountry.cashPickupBankAccountTransferFee;
-      } else {
-        return this.selectedCountry.bankAccountBankAccountTransferFee;
-      }
-    } else {
-      if(this.receiveType === 'Cash pickup') {
-        return this.selectedCountry.cashPickupPayInStoreTransferFee;
-      } else {
-        return this.selectedCountry.bankAccountPayInStoreTransferFee;
-      }
-    }
+    return calculateTransferFee({
+      payType,
+      country: this.selectedCountry,
+      receiveType: this.receiveType,
+    });
   }
+
   cardIsSelected($event) {
     this._store.dispatch({
       type: PAY_CARD_IS_SELECTED,

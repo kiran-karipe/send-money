@@ -4,14 +4,20 @@
   font-family: "Georgia", Times, serif;
   position: fixed;
   min-width: 300px;
+  max-width: 300px;
 }
 
 .exchangeRate {
   font-size: 14px;
-  /* display: inline-block; */
   padding-top: 0px;
   padding-bottom: 0px;
-  color: #44433D;
+  color: #767676;
+  text-align: right;
+  font-size: 14px;
+}
+
+.ttr {
+  font-size: 14px;
 }
 
 .padding-bottom-30 {

@@ -1,98 +1,28 @@
-<div class="card">
+<div class="card ">
   <div class="card-body">
     <h5 style="line-height: 12px;" class="card-title">Summary</h5>
     <div *ngIf="baseCountry !== selectedCountry">
       <p class="exchangeRate ng-scope">Exchange Rate</p>
-      <hr >
+      <hr />
       <span class="exchangeRate">1.00 USD = {{selectedCountry.exchangeRate}} {{selectedCountry.currency}} ({{selectedCountry.currencyCode}})</span>
       <hr />
     </div>
     <span class="exchangeRate">Transfer Amount {{transferAmount}} {{baseCountry.currencyCode}}</span>
     <br />
     <span class="exchangeRate">
-      Transfer Fee {{selectedCountry.creditCardTransferFeeCashPickup}}
-      {{receiveTypeCardName}}
+      Transfer Fee {{transferFee}}
       {{baseCountry.currencyCode}}
     </span>
     <br />
     <div class="padding-bottom-30"></div>
-    <span class="exchangeRate">Transfer Total {{transferAmount}} {{baseCountry.currencyCode}}</span>
-    <p class="exchangeRate">Total to receiver</p>
+    <span class="exchangeRate">Transfer Total {{transferAmount + transferFee}} {{baseCountry.currencyCode}}</span>
+    <br />
+    <span class="ttr">Total to receiver</span>
     <hr />
-    <p>{{receiveAmount}} {{baseCountry.currencyCode}}</p>
+    <p>{{receiveAmount}} {{selectedCountry.currencyCode}}</p>
     <div class="padding-bottom-30"></div>
     <div class="padding-bottom-30">
-      <p class="exchangeRate">Service Time:</p>
+      <p>Service Time:</p>
     </div>
   </div>
 </div>
-
-
-
-<!-- <div *ngIf="receiveType === 'Bank account'">
-  <div *ngIf="likeToPayType === 'Credit/debit card'">
-    <span class="exchangeRate">
-      Transfer Fee {{selectedCountry.creditCardTransferFeeBankAccount}}
-      {{receiveTypeCardName}}
-      {{baseCountry.currencyCode}}
-    </span>
-  </div>
-  < *ngIf="likeToPayType === 'Bank account' || likeToPayType === 'undefined'"
-  <div >
-    <span class="exchangeRate">
-      Transfer Fee {{selectedCountry.bankAccountTransferFeeBankAccount}}
-      {{receiveTypeCardName}}
-      {{baseCountry.currencyCode}}
-    </span>
-  </div>
-  <div *ngIf="likeToPayType === 'Pay in-store'">
-    <span class="exchangeRate">
-      Transfer Fee {{selectedCountry.payInStoreTransferFeeBankAccount}}
-      {{receiveTypeCardName}}
-      {{baseCountry.currencyCode}}
-    </span>
-  </div>
-  <br />
-  <div class="padding-bottom-30"></div>
-  <span class="exchangeRate">Transfer Total {{transferAmount}} {{baseCountry.currencyCode}}</span>
-  <p class="exchangeRate">Total to receiver</p>
-  <hr />
-  <span>{{receiveAmount}}</span>
-  <div class="padding-bottom-30"></div>
-  <div class="padding-bottom-30">
-    <p class="exchangeRate">Service Time:</p>
-  </div>
-</div> -->
-<!-- <div *ngIf="receiveType === 'Cash pickup'">
-  <div *ngIf="likeToPayType === 'Credit/debit card'">
-    <span class="exchangeRate">
-      Transfer Fee {{selectedCountry.creditCardTransferFeeCashPickup}}
-      {{receiveTypeCardName}}
-      {{baseCountry.currencyCode}}
-    </span>
-  </div>
-  <div >
-    <span class="exchangeRate">
-      Transfer Fee {{selectedCountry.bankAccountTransferFeeCashPickup}}
-      {{receiveTypeCardName}}
-      {{baseCountry.currencyCode}}
-    </span>
-  </div>
-  <div *ngIf="likeToPayType === 'Pay in-store'">
-    <span class="exchangeRate">
-      Transfer Fee {{selectedCountry.payInStoreTransferFeeCashPickup}}
-      {{receiveTypeCardName}}
-      {{baseCountry.currencyCode}}
-    </span>
-  </div>
-  <br />
-  <div class="padding-bottom-30"></div>
-  <span class="exchangeRate">Transfer Total {{transferAmount}} {{baseCountry.currencyCode}}</span>
-  <p class="exchangeRate">Total to receiver</p>
-  <hr />
-  <span>{{receiveAmount}}</span>
-  <div class="padding-bottom-30"></div>
-  <div class="padding-bottom-30">
-    <p class="exchangeRate">Service Time:</p>
-  </div>
-</div> -->

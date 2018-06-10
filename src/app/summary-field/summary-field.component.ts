@@ -1,8 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { CountryService } from '../country.service';
 import { Country } from '../models/country';
 import { Store } from '@ngrx/store';
 import { Subscription } from 'rxjs/Subscription';
+import { calculateTransferFee } from '../helpers/calculateTransferFee';
 
 @Component({
   selector: 'app-summary-field',
@@ -10,22 +10,35 @@ import { Subscription } from 'rxjs/Subscription';
   styleUrls: ['./summary-field.component.css'],
 })
 export class SummaryFieldComponent implements OnInit {
-  private subscription: Subscription;
-  countries: Country[];
   baseCountry: Country;
   selectedCountry: Country;
+  receiveType: string;
+  payType: string;
+  transferAmount: number;
+  receiveAmount: number;
+  transferFee: number;
 
-  constructor(private _store: Store<any>, private countryService: CountryService) {
+  private subscription: Subscription;
+  constructor(private _store: Store<any>) {
     this.subscription = this._store
       .select('app')
       .subscribe(app => {
-        this.countries = app.countries;
         this.baseCountry = app.baseCountry;
         this.selectedCountry = app.selectedCountry;
+        this.receiveType = app.receiveType;
+        this.payType = app.payType;
+        this.transferAmount = app.transferAmount;
+        this.receiveAmount = app.receiveAmount;
       });
   }
 
   ngOnInit() {
+    this.transferFee = calculateTransferFee({
+      payType: this.payType,
+      receiveType: this.receiveType,
+      country: this.selectedCountry
+    });
+    debugger;
   }
 
 }

@@ -2,22 +2,12 @@
   padding: 30px 25px;
 }
 .row {
-  /* padding: 30px 150px 50px 150px; */
 }
 
 .column1 {
-  /* padding: 30px 20px 10px 50px; */
   background: #fff;
   border: 1px #D3D3D3;
   width: 65%;
-}
-
-.column2 {
-  /* background: #fff; */
-  width: 27%;
-  /* padding-left: 120px; */
-  /* height: 80%; */
-  border: 1px #D3D3D3;
 }
 
 h1 {
@@ -57,19 +47,6 @@ hr {
     outline: 0;
     display: block;
     transition: color .3s;
-}
-
-.glyphicon {
-    position: relative;
-    top: 1px;
-    display: inline-block;
-    font-family: 'Glyphicons Halflings';
-    font-weight: 400;
-    line-height: 1;
-    -webkit-font-smoothing: antialiased;
-}
-.glyphicon, address {
-    font-style: normal;
 }
 
 a, a:hover, a:link, a:visited, label.check-box-text {
