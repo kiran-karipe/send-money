@@ -2,6 +2,10 @@
   padding-bottom: 30px;
 }
 
+.input {
+  background: none;
+}
+
 .unitedStatesField {
   position:absolute;
   left:830px;
@@ -27,4 +31,15 @@
   font-size:0.8em;
   color:#444;
   top:15px;
+}
+
+.material-icons {
+  font-size: 16px;
+}
+
+.errorTag{
+  border-radius: 2px;
+  text-align: left;
+  height: 20px;
+  background-color: #F08080; color: #fff!important;
 }

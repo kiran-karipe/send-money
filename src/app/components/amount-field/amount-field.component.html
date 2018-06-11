@@ -4,10 +4,11 @@
   [value]="amount || placeholder"
   (keyup)="handleAmountChange($event.target.value)"
   onKeyPress="if(this.value.length > 4) return false;">
-  <div *ngIf="keyPress >= 5000">
-    <br />
-    <span style="background-color: #e88c95; color: #fff!important;">
-      (!) Send upto 5,000.00 USD </span>
+  <br />
+  <div *ngIf="keyPress > 5000" class="errorTag">
+    <span>
+      <i class="material-icons">highlight_off</i>
+      Send upto 5,000.00 USD </span>
   </div>
   <div *ngIf="country.name === 'United States' && firstColumn ==='false'" class="unitedStatesField">
     <label for="country">{{ country.currencyCode }}</label>
