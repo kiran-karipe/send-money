@@ -4,27 +4,27 @@
 
 .unitedStatesField {
   position:absolute;
-	left:830px;
-	font-weight:bold;
-	font-size:0.8em;
-	color:#444;
-  top: 305px;
+  left:830px;
+  font-weight:bold;
+  font-size:0.8em;
+  color:#444;
+  top: 295px;
 }
 
 .unitedStatesColumnField {
   position:absolute;
   left:250px;
   font-weight:bold;
-	font-size:0.8em;
-	color:#444;
+  font-size:0.8em;
+  color:#444;
   top:15px;
 }
 
 .otherfields {
   position:absolute;
-	left:250px;
-	font-weight:bold;
-	font-size:0.8em;
-	color:#444;
-	top:15px;
+  left:250px;
+  font-weight:bold;
+  font-size:0.8em;
+  color:#444;
+  top:15px;
 }

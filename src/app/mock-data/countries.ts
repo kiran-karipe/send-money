@@ -4,6 +4,7 @@ export const COUNTRIES: Country[] = [
   {
     id: 1,
     name: 'United States',
+    code: 'US',
     currency: 'USD',
     currencyCode: 'USD',
     exchangeRate: 1,
@@ -19,6 +20,7 @@ export const COUNTRIES: Country[] = [
   {
     id: 2,
     name: 'India',
+    code: 'IN',
     currency: 'Indian Rupee',
     currencyCode: 'INR',
     exchangeRate: 66.8866,
@@ -34,6 +36,7 @@ export const COUNTRIES: Country[] = [
   {
     id: 3,
     name: 'Philippines',
+    code: 'PH',
     currency: 'Philippine Peso',
     currencyCode: 'PHP',
     exchangeRate: 51.5348,
@@ -49,6 +52,7 @@ export const COUNTRIES: Country[] = [
   {
     id: 4,
     name: 'China',
+    code: 'CN',
     currency: 'Chinese Yuan Renminbi',
     currencyCode: 'CNY',
     exchangeRate: 6.3470,
@@ -64,6 +68,7 @@ export const COUNTRIES: Country[] = [
   {
     id: 5,
     name: 'Mexico',
+    code: 'MX',
     currency: 'Mexican Peso',
     currencyCode: 'MXN',
     exchangeRate: 19.7539,
@@ -79,6 +84,7 @@ export const COUNTRIES: Country[] = [
   {
     id: 6,
     name: 'Jamaica',
+    code: 'JM',
     currency: 'Jamaican Dollar',
     currencyCode: 'JMD',
     exchangeRate: 123.2811,
@@ -94,6 +100,7 @@ export const COUNTRIES: Country[] = [
   {
     id: 7,
     name: 'Colombia',
+    code: 'CO',
     currency: 'Colombian Peso',
     currencyCode: 'COP',
     exchangeRate: 2747.5200,

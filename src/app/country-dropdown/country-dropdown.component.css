@@ -1,3 +1,11 @@
+body {
+  font-family: sans-serif;
+  font-size: 13px;
+  line-height: 1.231;
+  min-width: 300px;
+  overflow-x: hidden;
+}
+
 .dropdown-name-style {
   height: 23px;
 }
@@ -8,4 +16,138 @@
 
 .padding-bottom-30 {
   padding-bottom: 30px;
+}
+
+.flag-icon, .flag-icon-background {
+  background-size: contain;
+  background-position: 50%;
+  background-repeat: no-repeat;
+}
+
+.flag-icon.flag-icon-position {
+  width: 34px;
+  border: 1px solid #D9D9D9;
+  height: 26px;
+  text-align: center;
+  margin-left: 12px;
+  margin-top: 12px;
+  position: absolute;
+  z-index: 2;
+  line-height: 34px;
+  pointer-events: none;
+  display: block;
+}
+
+.flag-icon-us {
+  background-image: url(../../assets/images/country-flags/us.svg);
+}
+
+.flag-icon-in {
+  background-image: url(../../assets/images/country-flags/in.svg);
+}
+
+.flag-icon-mx {
+  background-image: url(../../assets/images/country-flags/mx.svg);
+}
+
+.flag-icon-cn {
+  background-image: url(../../assets/images/country-flags/cn.svg);
+}
+
+.flag-icon-ph {
+  background-image: url(../../assets/images/country-flags/ph.svg);
+}
+
+.flag-icon-jm {
+  background-image: url(../../assets/images/country-flags/jm.svg);
+}
+
+.flag-icon-co {
+  background-image: url(../../assets/images/country-flags/co.svg);
+}
+
+.typeahead-arrow {
+  background: url(../../assets/images/triangle-bottom.png) right 10px center no-repeat #fff;
+  background-position: right 10px center;
+  color: #0a8ac7;
+  font-size: 13px;
+  z-index: 2;
+  display: block;
+  line-height: 34px;
+  text-align: center;
+  margin-top: 9px;
+  right: 20px;
+  width: 32px;
+  pointer-events: none;
+  position: absolute;
+}
+
+#country-input {
+  color: #000;
+  padding-left: 55px;
+  padding-top: 21px;
+  height: 50px;
+  font-size: 14px;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  border: 1px solid #D3D3D3;
+  font-weight: 500;
+  border-radius: 3px;
+}
+
+.floating-label {
+  top: 8px;
+  bottom: 10px;
+  left: 71px;
+  font-size: 11px;
+  opacity: 1;
+  color: #7E7E7E;
+  position: absolute;
+  transition: .2s ease all;
+}
+
+.dropdown-menu {
+  display: block;
+  top: 50px;
+  left: 15px;
+  min-height: 30px;
+  height: auto;
+  max-height: 405px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  border: 1px solid #ccc;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  z-index: 1000;
+  float: left;
+  min-width: 160px;
+  font-size: 14px;
+  text-align: left;
+  list-style: none;
+  background-color: #fff;
+  background-clip: padding-box;
+  border-radius: 4px;
+  box-shadow: 0 6px 12px rgba(0,0,0,.175);
+}
+
+.dropdown-menu>li>a {
+  clear: both;
+  padding: 3px 10px;
+  display: block;
+  font-weight: 400;
+  line-height: 1.42857143;
+  color: #333;
+  white-space: nowrap;
+  cursor: pointer;
+  text-decoration: none;
+  background-color: transparent;
+}
+
+.dropdown-menu>.active>a:hover {
+  color: #fff;
+  text-decoration: none;
+  background-color: #B9B9B9;
+  outline: 0;
 }
