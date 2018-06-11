@@ -1,6 +1,6 @@
 <div *ngIf="from !== to">
   <div class="row">
-    <div class='col-xs-12 col-sm-5'>
+    <div class='col-md-5'>
       <app-amount-field
         [placeholder]="'Send Amount'"
         [amount]="transferAmount"
@@ -10,14 +10,10 @@
         >
       </app-amount-field>
     </div>
-    <div class="padding-left-10">
+    <div class="col-sm-2">
+      <img style="padding-left: 30px; padding-top: 10px; height: 40px;" src="../../assets/images/exchange-icon.svg">
     </div>
-    <div >
-      <img style="height: 50px;" src="http://chittagongit.com//images/two-way-arrow-icon/two-way-arrow-icon-7.jpg">
-    </div>
-    <div class="padding-left-10">
-    </div>
-    <div class='col-xs-12 col-sm-5'>
+    <div class='col-md-5'>
       <app-amount-field
         [placeholder]="'Receive Amount'"
         [amount]="receiveAmount"

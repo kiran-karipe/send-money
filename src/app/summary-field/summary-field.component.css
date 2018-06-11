@@ -1,4 +1,4 @@
-.container {
+.card {
   background-color: #f3faff;
   font-size: 11px;
   font-family: "Georgia", Times, serif;
@@ -9,25 +9,18 @@
 }
 
 .heading1 {
-  padding-top: 20px;
   text-align: left;
-}
-
-.heading2 {
-  text-align: left;
-  font-weight: lighter;
-  font-size: 16px;
-  line-height: 10px;
-  padding-top: 20px;
 }
 
 .items {
+}
+
+.smaller {
   color: #767676;
   font-family: "Open Sans",HelveticaNeue,"Helvetica Neue",Helvetica,Arial,sans-serif;
-  /* width: 50%; */
-  /* display: inline-block; */
-  text-align: right;
   font-size: 14px;
+  text-align: right;
+  font-weight: lighter;
 }
 
 .bigger {
@@ -35,15 +28,19 @@
   font-family: "Open Sans",HelveticaNeue,"Helvetica Neue",Helvetica,Arial,sans-serif;
   font-style: normal;
   font-size: 18px;
+  padding-left: 80px;
+  text-align: right;
+  font-weight: lighter;
 }
 
-.exchangeRate {
-  font-size: 14px;
-  padding-top: 0px;
-  padding-bottom: 0px;
-  color: #767676;
+.thisBigger {
+  color: #44433D;
+  font-family: "Open Sans",HelveticaNeue,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-style: normal;
+  font-size: 18px;
+  padding-left: 180px;
   text-align: right;
-  font-size: 14px;
+  font-weight: lighter;
 }
 
 .ttr {
