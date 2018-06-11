@@ -1,8 +1,14 @@
-<input type="number" class="form-control tall_height" id="country" required
+<input type="number"
+  class="form-control tall_height" id="amount"
+  ngModel
+  required maxlength="4"
   [placeholder]="placeholder"
   [value]="amount || placeholder"
   (keyup)="handleAmountChange($event.target.value)">
-  <div *ngIf="country.name === 'United States'" class="unitedStatesField">
+  <div *ngIf="country.name === 'United States' && firstColumn ==='false'" class="unitedStatesField">
+    <label for="country">{{ country.currencyCode }}</label>
+  </div>
+  <div *ngIf="country.name === 'United States' && firstColumn ==='true'" class="unitedStatesColumnField">
     <label for="country">{{ country.currencyCode }}</label>
   </div>
   <div *ngIf="country.name !== 'United States'" class="otherfields">

@@ -13,6 +13,7 @@ export class CountryDropdownComponent {
   @Input() countries: Country[];
   @Input() selectedCountry: Country;
   @Output() countryChangeEvent = new EventEmitter<Country>();
+
   handleChange(countryId: Number) {
     this.countryChangeEvent.emit(this.countries.find(country => country.id == countryId));
   }

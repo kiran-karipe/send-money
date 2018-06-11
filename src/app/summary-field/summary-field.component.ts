@@ -3,6 +3,7 @@ import { Country } from '../models/country';
 import { Store } from '@ngrx/store';
 import { Subscription } from 'rxjs/Subscription';
 import { calculateTransferFee } from '../helpers/calculateTransferFee';
+import { round } from 'lodash';
 
 @Component({
   selector: 'app-summary-field',
@@ -17,6 +18,7 @@ export class SummaryFieldComponent implements OnInit {
   transferAmount: number;
   receiveAmount: number;
   transferFee: number;
+  transferTotal = 0;
 
   private subscription: Subscription;
   constructor(private _store: Store<any>) {
@@ -32,13 +34,18 @@ export class SummaryFieldComponent implements OnInit {
       });
   }
 
-  ngOnInit() {
-    this.transferFee = calculateTransferFee({
+  ngOnInit() {}
+
+  getTransferFee() {
+    return calculateTransferFee({
       payType: this.payType,
       receiveType: this.receiveType,
       country: this.selectedCountry
     });
-    debugger;
+  }
+
+  getTotal() {
+    return round(this.getTransferFee() + this.transferAmount, 2);
   }
 
 }

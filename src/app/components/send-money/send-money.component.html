@@ -17,6 +17,11 @@
           [selectedCountry]="selectedCountry">
         </app-like-to-pay>
         <app-promo-code></app-promo-code>
+        <app-state-dropdown
+          [country]="selectedCountry"
+          [states]="states"
+          (stateChangeEvent)="setSelectedState($event)">
+        </app-state-dropdown>
         <button class="btn btn-primary btn-lg btn-block no-margin">Continue</button>
       </div>
     </div>

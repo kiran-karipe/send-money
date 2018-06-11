@@ -13,7 +13,7 @@ export class LikeToPayCardComponent implements OnInit {
   @Input() price: number;
   @Output() isSelectedEvent = new EventEmitter<string>();
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit() {
   }

@@ -1,0 +1,14 @@
+<div *ngIf="country.name === 'United States' && payType === 'Pay in-store'">
+  <div class="dropdown-name-style">Confirm the state where you are going to pay for transfer</div>
+  <div class="padding-top-10"></div>
+  <div>
+    <select class="form-control" style="height: 50px;" id="state" required
+            (change)="handleChange($event.target.value)">
+      <option>Please Select</option>
+      <option *ngFor="let state of states" [value]="state.id">
+        {{state.name}}
+      </option>
+    </select>
+  </div>
+  <div class="padding-bottom-30"></div>
+</div>

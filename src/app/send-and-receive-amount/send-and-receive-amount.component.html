@@ -1,18 +1,23 @@
 <div *ngIf="from !== to">
   <div class="row">
-    <div class='col-sm-5'>
+    <div class='col-xs-12 col-sm-5'>
       <app-amount-field
         [placeholder]="'Send Amount'"
         [amount]="transferAmount"
         [country]="from"
         (amountChange)="onTransferAmountChange($event)"
+        [firstColumn]="'true'"
         >
       </app-amount-field>
     </div>
-    <div >
-      <img style="height: 50px;" src="http://chittagongit.com/images/two-way-arrow-icon/two-way-arrow-icon-7.jpg">
+    <div class="padding-left-10">
     </div>
-    <div class='col-sm-5'>
+    <div >
+      <img style="height: 50px;" src="http://chittagongit.com//images/two-way-arrow-icon/two-way-arrow-icon-7.jpg">
+    </div>
+    <div class="padding-left-10">
+    </div>
+    <div class='col-xs-12 col-sm-5'>
       <app-amount-field
         [placeholder]="'Receive Amount'"
         [amount]="receiveAmount"
@@ -36,9 +41,9 @@
     [amount]="transferAmount"
     [country]="from"
     (amountChange)="onTransferAmountChange($event)"
+    [firstColumn]="'false'"
     >
   </app-amount-field>
+  <div class="padding-bottom-30"></div>
 </div>
-
-<div class="padding-bottom-30"></div>
 <hr />

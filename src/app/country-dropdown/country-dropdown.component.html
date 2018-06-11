@@ -4,7 +4,6 @@
   <select class="form-control" style="height: 50px;" id="country" required
           [value]="selectedCountry && selectedCountry.id"
           (change)="handleChange($event.target.value)">
-    <option>Please Select</option>
     <option *ngFor="let country of countries" [value]="country.id">
       {{country.name}}
     </option>

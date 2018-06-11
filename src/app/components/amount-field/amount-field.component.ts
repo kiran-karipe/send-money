@@ -1,4 +1,5 @@
 import { Component, Input, Output, OnInit, EventEmitter } from '@angular/core';
+import { Validators } from '@angular/forms';
 import { Country } from '../../models/country';
 
 @Component({
@@ -10,6 +11,7 @@ export class AmountFieldComponent implements OnInit{
   @Input() placeholder: string;
   @Input() amount: number;
   @Input() country: Country;
+  @Input() firstColumn: boolean;
   @Output() amountChange = new EventEmitter<number>();
 
   constructor() {}
@@ -18,6 +20,6 @@ export class AmountFieldComponent implements OnInit{
   }
 
   handleAmountChange(amount) {
-    this.amountChange.emit(amount);
+    this.amountChange.emit(parseFloat(amount));
   }
 }

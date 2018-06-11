@@ -4,11 +4,14 @@ import { Subscription } from 'rxjs/Subscription';
 
 import { CountryService } from '../../country.service';
 import { Country } from '../../models/country';
+import { State } from '../../models/state';
 import * as fromRoot from '../../app.reducer';
 import {
   GET_COUNTRIES,
   SET_SELECTED_COUNTRY,
-  SET_BASE_COUNTRY
+  SET_BASE_COUNTRY,
+  GET_STATES,
+  SET_SELECTED_STATE,
 } from '../../app.reducer';
 
 @Component({
@@ -17,10 +20,12 @@ import {
   styleUrls: ['./send-money.component.css']
 })
 export class SendMoneyComponent implements OnInit {
-  private subscription: Subscription;
   countries: Country[];
+  states: State[];
   baseCountry: Country;
   selectedCountry: Country;
+
+  private subscription: Subscription;
 
   constructor(private _store: Store<any>, private countryService: CountryService) {
     this.subscription = this._store
@@ -29,11 +34,13 @@ export class SendMoneyComponent implements OnInit {
         this.countries = app.countries;
         this.baseCountry = app.baseCountry;
         this.selectedCountry = app.selectedCountry;
+        this.states = app.states;
       });
   }
 
   ngOnInit() {
     this.getCountries();
+    this.getStates();
     this.setBaseCountry();
     this.setSelectedCountry(this.getBaseCountry());
   }
@@ -49,6 +56,13 @@ export class SendMoneyComponent implements OnInit {
     });
   }
 
+  getStates(): void {
+    this._store.dispatch({
+      type: GET_STATES,
+      payload: this.countryService.getStates()
+    });
+  }
+
   setBaseCountry(): void {
     this._store.dispatch({
       type: SET_BASE_COUNTRY,
@@ -61,6 +75,13 @@ export class SendMoneyComponent implements OnInit {
       type: SET_SELECTED_COUNTRY,
       payload: selectedCountry
     });
+  }
+
+  setSelectedState(selectedState: State): void {
+    this._store.dispatch({
+      type: SET_SELECTED_STATE,
+      payload: selectedState
+    })
   }
 
   ngOnDestroy(){

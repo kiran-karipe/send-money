@@ -18,6 +18,7 @@ import { LikeToPayCardComponent } from './components/like-to-pay-card/like-to-pa
 import { ReceiveTypeComponent } from './components/receive-type/receive-type.component';
 import { LikeToPayComponent } from './components/like-to-pay/like-to-pay.component';
 import { PromoCodeComponent } from './components/promo-code/promo-code.component';
+import { StateDropdownComponent } from './components/state-dropdown/state-dropdown.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { PromoCodeComponent } from './components/promo-code/promo-code.component
     LikeToPayCardComponent,
     ReceiveTypeComponent,
     LikeToPayComponent,
-    PromoCodeComponent
+    PromoCodeComponent,
+    StateDropdownComponent
   ],
   imports: [
     BrowserModule,
