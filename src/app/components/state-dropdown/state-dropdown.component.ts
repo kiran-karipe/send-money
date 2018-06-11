@@ -14,6 +14,7 @@ export class StateDropdownComponent implements OnInit {
   @Input() states: State[];
   @Output() stateChangeEvent = new EventEmitter<State>();
   payType: string;
+  receiveType: string;
 
   private subscription: Subscription;
 
@@ -22,6 +23,7 @@ export class StateDropdownComponent implements OnInit {
       .select('app')
       .subscribe(app => {
         this.payType = app.payType;
+        this.receiveType = app.receiveType;
       });
   }
 
