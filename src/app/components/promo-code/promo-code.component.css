@@ -10,3 +10,7 @@
     display: block;
     transition: color .3s;
 }
+
+.material-icons {
+  font-size: 14px;
+}
