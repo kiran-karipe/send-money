@@ -11,6 +11,7 @@ export class LikeToPayCardComponent implements OnInit {
   @Input() country: Country;
   @Input() selected: boolean;
   @Input() price: number;
+  @Input() bankAccount: boolean;
   @Output() isSelectedEvent = new EventEmitter<string>();
 
   constructor() {}

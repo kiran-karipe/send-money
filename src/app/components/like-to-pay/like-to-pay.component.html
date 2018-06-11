@@ -24,7 +24,8 @@
       [country]="selectedCountry"
       [selected]="payType==='Pay in-store'"
       [price]="getPrice('Pay in-store')"
-      (isSelectedEvent)="cardIsSelected($event)">
+      (isSelectedEvent)="cardIsSelected($event)"
+      [bankAccount]="receiveType === 'Bank account'">
     </app-like-to-pay-card>
   </div>
 </div>

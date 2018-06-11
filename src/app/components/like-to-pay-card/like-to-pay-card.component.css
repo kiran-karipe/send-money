@@ -46,3 +46,17 @@ h5 {
 .negative {
     background-color: #fff;
 }
+
+.disable {
+  background-color: #fff;
+  border-color: #D3D3D3;
+  color: #D3D3D3;
+}
+
+.disable:hover {
+  background-color: #fff;
+  cursor: default;
+  box-shadow: none;
+  border-width: 0.1em;
+  border-color: #D3D3D3;
+}
