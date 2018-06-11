@@ -14,12 +14,14 @@ export class AmountFieldComponent implements OnInit{
   @Input() firstColumn: boolean;
   @Output() amountChange = new EventEmitter<number>();
 
+  keyPress = 0;
   constructor() {}
 
   ngOnInit() {
   }
 
   handleAmountChange(amount) {
+    this.keyPress = parseFloat(amount);
     this.amountChange.emit(parseFloat(amount));
   }
 }
