@@ -1,49 +1,21 @@
-.card {
+.container {
   background-color: #f3faff;
   font-size: 11px;
-  font-family: "Georgia", Times, serif;
   position: fixed;
   min-width: 300px;
   width: 320px;
 }
 
 .heading1 {
+  padding-top: 20px;
   text-align: left;
-}
-
-.items {
-}
-
-.smaller {
-  color: #767676;
   font-family: "Open Sans",HelveticaNeue,"Helvetica Neue",Helvetica,Arial,sans-serif;
-  font-size: 14px;
-  font-weight: lighter;
 }
 
-.bigger {
-  color: #44433D;
-  font-family: "Open Sans",HelveticaNeue,"Helvetica Neue",Helvetica,Arial,sans-serif;
-  font-style: normal;
-  font-size: 18px;
-  text-align: right;
-  font-weight: lighter;
+.transferText {
+  float: left; padding-left: 40px; font-size: 12px;
 }
 
-.thisBigger {
-  color: #44433D;
-  font-family: "Open Sans",HelveticaNeue,"Helvetica Neue",Helvetica,Arial,sans-serif;
-  font-style: normal;
-  font-size: 18px;
-  /* padding-left: 180px; */
-  /* text-align: right; */
-  font-weight: lighter;
-}
-
-.ttr {
-  font-size: 14px;
-}
-
-.padding-bottom-30 {
-  padding-bottom: 30px;
+.transferAmount {
+  float: right; font-size: 16px;
 }

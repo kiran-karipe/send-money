@@ -1,47 +1,75 @@
-<div class="card">
+<div class="container">
+  <h5 class="heading1">Summary</h5>
+  <div *ngIf="baseCountry.name !== selectedCountry.name">
+    <div style="padding-top: 10px;">
+      <span style="font-size: 14px;">Exchange Rate</span>
+      <hr style="margin-top: 0px;"/>
+      <div style="text-align: right;">
+        <span style="font-size: 16px;">1.00 USD = {{selectedCountry.exchangeRate}} ({{selectedCountry.currencyCode}})</span>
+      </div>
+      <hr style="margin: 0px;"/>
+    </div>
+  </div>
+  <div *ngIf="baseCountry === selectedCountry">
+    <hr style="margin: 5px;"/>
+  </div>
+  <div style="padding-top: 10px;">
+    <span class="transferText">Transfer Amount</span>
+    <span class="transferAmount">{{transferAmount | number : '1.2'}} {{baseCountry.currencyCode}}</span>
+  </div>
+  <br />
+  <div style="padding-top: 10px;">
+    <span class="transferText">Transfer Fee</span>
+    <span class="transferAmount">+{{getTransferFee() | number : '1.2'}} {{baseCountry.currencyCode}}</span>
+  </div>
+  <br />
+  <div style="padding-top: 10px;">
+    <span class="transferText">Transfer Total</span>
+    <span class="transferAmount">{{getTotal() | number : '1.2'}} {{baseCountry.currencyCode}}</span>
+  </div>
+  <br />
+  <div style="padding-top: 20px;">
+    <span style="font-size: 14px;">Total to receiver</span>
+  </div>
+  <hr style="margin-top: 0px; margin: 0px;" />
+  <div style="text-align: right; font-size: 16px;">
+    <span >{{receiveAmount | number : '1.2'}} {{selectedCountry.currencyCode}}</span>
+  </div>
+  <br />
+  <hr style="margin: 0px;" />
+  <div style="padding-bottom: 30px; font-size: 14px;">
+    <span>Service Time:</span>
+  </div>
+</div>
+
+<!--  -->
+<!-- <div class="card">
   <div class="card-body">
     <div class=" heading1">
-      <h5 class="card-title">Summary</h5>
+
       <div>
-        <div *ngIf="baseCountry !== selectedCountry">
-          <div class="heading2">
-            <span >Exchange Rate</span>
-            <div class="hrTag">
-              <hr />
-            </div>
-            <div style="text-align: right">
-              <span>1.00 USD = {{selectedCountry.exchangeRate}} ({{selectedCountry.currencyCode}})</span>
-            </div>
-            <hr />
-          </div>
-        </div>
-        <div *ngIf="baseCountry === selectedCountry">
-          <hr />
-        </div>
+
       </div>
     </div>
     <div class="items">
-      <span class="smaller">Transfer Amount</span>
-      <span class="bigger">{{transferAmount | number : '1.2'}} {{baseCountry.currencyCode}}</span>
+
       <br />
-      <span class="smaller">Transfer Fee</span>
-      <span class="bigger">+{{getTransferFee() | number : '1.2'}}
-      {{baseCountry.currencyCode}}</span>
+
+
       <br />
-      <span class="smaller">Transfer Total</span>
-      <span class="bigger">{{getTotal() | number : '1.2'}} {{baseCountry.currencyCode}}</span>
+
       <br />
     </div>
     <div class="padding-bottom-30"></div>
     <div class="heading2">
-      <span class="ttr">Total to receiver</span>
+
     </div>
     <hr />
-    <span class="thisBigger">{{receiveAmount | number : '1.2'}} {{selectedCountry.currencyCode}}</span>
+
     <div class="heading2">
       <hr />
-      <span>Service Time:</span>
+
       <div class="padding-bottom-30"></div>
     </div>
   </div>
-</div>
+</div> -->
