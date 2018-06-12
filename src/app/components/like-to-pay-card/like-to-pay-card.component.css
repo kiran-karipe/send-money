@@ -9,12 +9,7 @@
 .card {
   border-width: 0.1em;
 }
-/* .disabled {
-  cursor: default;
-  border-color: #D3D3D3;
-  background-color: #fff;
-  outline: 0;
-} */
+
 h5 {
   font-family: 'Arial Narrow';
   text-align: center;
@@ -47,15 +42,15 @@ h5 {
     background-color: #fff;
 }
 
-.disable {
+.disabled {
   background-color: #fff;
   border-color: #D3D3D3;
   color: #D3D3D3;
 }
 
-.disable:hover {
+.disabled:hover {
   background-color: #fff;
-  cursor: default;
+  cursor: not-allowed;
   box-shadow: none;
   border-width: 0.1em;
   border-color: #D3D3D3;
