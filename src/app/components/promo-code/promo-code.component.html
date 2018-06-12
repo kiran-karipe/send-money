@@ -16,7 +16,7 @@
     </div>
     <div class="col-sm-2 padding-0-2">
       <button class="btn btn-primary form-control"
-              [ngClass]="{'negative': !buttonEnabled}">
+              [ngClass]="{disabled: !buttonEnabled}">
         Apply
       </button>
     </div>

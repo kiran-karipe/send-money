@@ -15,14 +15,6 @@
   font-size: 14px;
 }
 
-input {
-  width: 100%;
-  outline:none;
-}
-
-button {
-  color: #fff;
-}
 
 .btn.form-control {
     height: 50px;
@@ -34,7 +26,7 @@ button {
     border-color: #1599BA;
 }
 
-.negative {
+.disabled {
   background-color: #2e6da4;
   border-color: #337ab7;
   cursor: not-allowed;
