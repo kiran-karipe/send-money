@@ -1,5 +1,5 @@
-.padding-right-30 {
-    padding-right: 30px;
+.padding-bottom-30 {
+    padding-bottom: 30px;
 }
 
 .wu-optional-field>a, .wu-optional-field>a:link, .wu-optional-field>a:visited {
@@ -13,4 +13,31 @@
 
 .material-icons {
   font-size: 14px;
+}
+
+input {
+  width: 100%;
+  outline:none;
+}
+
+button {
+  color: #fff;
+}
+
+.btn.form-control {
+    height: 50px;
+    display: table-cell;
+    border-radius: 0 3px 3px 0;
+    z-index: 1;
+    padding-top: 8px!important;
+    background-color: #1599BB;
+    border-color: #1599BA;
+}
+
+.negative {
+  background-color: #2e6da4;
+  border-color: #337ab7;
+  cursor: not-allowed;
+  box-shadow: none;
+  opacity: .65;
 }
