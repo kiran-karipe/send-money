@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms'; // <-- NgModel lives here
 import { StoreModule, Store } from '@ngrx/store';
 import { appReducer } from './app.reducer';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { ClickOutsideModule } from 'ng4-click-outside';
 
 import { AppComponent } from './app.component';
 import { CountryDropdownComponent } from './country-dropdown/country-dropdown.component';
@@ -41,7 +42,8 @@ import { StateDropdownComponent } from './components/state-dropdown/state-dropdo
     BrowserModule,
     FormsModule,
     StoreModule.forRoot({ app: appReducer }),
-    NgbModule.forRoot()
+    NgbModule.forRoot(),
+    ClickOutsideModule
   ],
   providers: [DataService, CountryService],
   bootstrap: [AppComponent]
