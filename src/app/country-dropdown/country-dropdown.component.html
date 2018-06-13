@@ -9,12 +9,12 @@
         <input type="text" id="country-input" tabindex="1" name="country"
                class="form-control" ng-required="true" required="required"
                [value]="selectedCountry && selectedCountry.name"
-               (focus)="handleOnFocus($event.target.value)">
+               (click)="handleOnClick()">
         <div class="floating-label">Send to</div>
         <ul class="dropdown-menu" role="listbox"
             [hidden]="!displayDropdown">
           <li class="uib-typeahead-match ng-scope active"
-              *ngFor="let country of countries" ng-class="{active: isActive($index) }"
+              *ngFor="let country of countries" ng-class="{active: isActive($index)}"
               (click)="handleChange($event.target.dataset.countryId)">
             <a [attr.data-country-id]="country.id"><span>{{ country.name }}</span></a>
           </li>

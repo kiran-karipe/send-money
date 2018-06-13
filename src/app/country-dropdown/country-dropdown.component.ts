@@ -14,8 +14,8 @@ export class CountryDropdownComponent {
   @Input() selectedCountry: Country;
   @Output() countryChangeEvent = new EventEmitter<Country>();
 
-  handleOnFocus(country) {
-    this.displayDropdown = true;
+  handleOnClick() {
+    this.displayDropdown = !this.displayDropdown;
   }
 
   handleChange(countryId: string) {
