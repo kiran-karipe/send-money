@@ -9,7 +9,6 @@ import { ClickOutsideModule } from 'ng4-click-outside';
 import { AppComponent } from './app.component';
 import { CountryDropdownComponent } from './country-dropdown/country-dropdown.component';
 import { SummaryFieldComponent } from './summary-field/summary-field.component';
-import { ConfirmStateDropdownComponent } from './confirm-state-dropdown/confirm-state-dropdown.component';
 import { DataService } from './data.service';
 import { CountryService } from './country.service';
 import { SendAndReceiveAmountComponent } from './send-and-receive-amount/send-and-receive-amount.component';
@@ -27,7 +26,6 @@ import { StateDropdownComponent } from './components/state-dropdown/state-dropdo
     AppComponent,
     CountryDropdownComponent,
     SummaryFieldComponent,
-    ConfirmStateDropdownComponent,
     SendAndReceiveAmountComponent,
     SendMoneyComponent,
     AmountFieldComponent,
@@ -36,7 +34,7 @@ import { StateDropdownComponent } from './components/state-dropdown/state-dropdo
     ReceiveTypeComponent,
     LikeToPayComponent,
     PromoCodeComponent,
-    StateDropdownComponent
+    StateDropdownComponent,
   ],
   imports: [
     BrowserModule,
