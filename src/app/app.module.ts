@@ -9,7 +9,6 @@ import { ClickOutsideModule } from 'ng4-click-outside';
 import { AppComponent } from './app.component';
 import { CountryDropdownComponent } from './country-dropdown/country-dropdown.component';
 import { SummaryFieldComponent } from './summary-field/summary-field.component';
-import { DataService } from './data.service';
 import { CountryService } from './country.service';
 import { SendAndReceiveAmountComponent } from './send-and-receive-amount/send-and-receive-amount.component';
 import { SendMoneyComponent } from './components/send-money/send-money.component';
@@ -43,7 +42,7 @@ import { StateDropdownComponent } from './components/state-dropdown/state-dropdo
     NgbModule.forRoot(),
     ClickOutsideModule
   ],
-  providers: [DataService, CountryService],
+  providers: [ CountryService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
